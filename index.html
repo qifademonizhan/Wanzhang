@@ -1,39 +1,32 @@
 <!DOCTYPE html>
-<html lang="kr">
+<html lang="ko">
 <head>
-  <title>나는 세계의 시민이다</title>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8">
+  <title>입력창 예제</title>
 </head>
 <body>
-  <header>
-    <h1>나는 세계의 시민이다</h1>
-    <nav>
-      <ul>
-        <li>와</li>
-        <li>샌즈</li>
-        <li>아시는구나</li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section>
-      <img src="./sans.png"
-        width="500" height="50"><br>
-      <img src="./sans.png"
-        width="500" height="50"><br>
-      <img src="./sans.png"
-        width="500" height="50">
-      <h2>샌즉사지 3층석탑</h2>
-      <p>뭐</p>
-      <article>
-        <h3>뭐 쓰는 법 배워옴</h3>
-        <p>뭐</p>
-      </article>
-    </section>
-  </main>
-  <footer>
-    샌즈주의적 사고에 기인
-  </footer>
-</body>
+  <h2>기본 입력창</h2>
   
+  <!-- 텍스트 입력창 -->
+  이름: <input type="text" name="username"><br><br>
+  
+  <!-- 비밀번호 입력창 -->
+  비밀번호: <input type="password" name="password"><br><br>
+  
+  <!-- 숫자 입력창 -->
+  나이: <input type="number" name="age"><br><br>
+  
+  <!-- 이메일 입력창 -->
+  이메일: <input type="email" name="email"><br><br>
+  
+  <!-- 날짜 입력창 -->
+  생년월일: <input type="date" name="birth"><br><br>
+  
+  <!-- 다중행 입력창 -->
+  자기소개: <br>
+  <textarea name="intro" rows="4" cols="40"></textarea><br><br>
+  
+  <!-- 제출 버튼 -->
+  <input type="submit" value="제출">
+</body>
 </html>
