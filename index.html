@@ -2,31 +2,11 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>입력창 예제</title>
 </head>
 <body>
-  <h2>기본 입력창</h2>
-  
-  <!-- 텍스트 입력창 -->
-  이름: <input type="text" name="username"><br><br>
-  
-  <!-- 비밀번호 입력창 -->
-  비밀번호: <input type="password" name="password"><br><br>
-  
-  <!-- 숫자 입력창 -->
-  나이: <input type="number" name="age"><br><br>
-  
-  <!-- 이메일 입력창 -->
-  이메일: <input type="email" name="email"><br><br>
-  
-  <!-- 날짜 입력창 -->
-  생년월일: <input type="date" name="birth"><br><br>
-  
-  <!-- 다중행 입력창 -->
-  자기소개: <br>
-  <textarea name="intro" rows="4" cols="40"></textarea><br><br>
-  
-  <!-- 제출 버튼 -->
-  <button>버튼</button>
+  <button id='a'>버튼</button>
+  <script>
+    button.gerElementById('a').onclick = function() {
+      alert('it works!');};
+  </script>
 </body>
-</html>
