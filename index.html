@@ -1,8 +1,83 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <title>샌즈 클리커</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh
+      display: flex; 
+      flex-direction: column
+      justify-content: center;
+      align-items: center; 
+    }
+
+    p {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    img {
+      width: 200px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.1s ease;
+    }
+    img:active {
+      transform: scale(1.1);
+  </style>
 </head>
 <body>
-  <img src="./sans.png">
+  <p>샌즈 클리커</p>
+  <img src="./sans.png" id="newSans" alt="sans" />
+  <p>현재 값: <span id="count">0</span></p>
+
+  <script type="module">
+    // Firebase SDK (v11) CDN 임포트
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+    import { 
+      getFirestore, doc, onSnapshot, updateDoc, increment 
+    } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+    // (선택) Analytics가 꼭 필요하지 않다면 생략하세요
+    // import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCEvE_lccy97Ppjgrv-GumHiNXfUJ3SiZc",
+      authDomain: "qifa-23727.firebaseapp.com",
+      projectId: "qifa-23727",
+      storageBucket: "qifa-23727.firebasestorage.app",
+      messagingSenderId: "328358384863",
+      appId: "1:328358384863:web:27ff9721827cd62a22c56a",
+      measurementId: "G-DCLHTRQCYY"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+  
+    const counterRef = doc(db, "counter", "counterFile");
+    
+    onSnapshot(counterRef, (docSnap) => {
+      const el = document.getElementById("count");
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        el.textContent = data.value ?? 0;
+      } else {
+        el.textContent = "문서 없음";
+      }
+    });
+
+    async function sansClick() {
+      try {
+        await updateDoc(counterRef, { value: increment(1) });
+      } catch (e) {
+        console.error("증가 실패:", e);
+        alert("증가 중 오류가 발생했습니다.");
+      }
+    }
+
+    document.getElementById("newSans").addEventListener("click", sansClick);
+  </script>
 </body>
+</html>
