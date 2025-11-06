@@ -77,8 +77,13 @@ const analytics = getAnalytics(app);
       } catch (error) {
         console.error(" 업데이트 중 오류 발생:", error);
     }}
-   
-    
+    const count = document.getElementById("count")
+    const ChangeOnTime = onSnapshot(doc( db, "counter", "counterFile") , (snap) => {
+      if (snap.exists()) {
+        const data = snap.data();
+        count.textContent = data.value
+  } else {
+        alert("해당 문서가 존재하지 않습니다.");
   </script>
 </body>
 </html>
