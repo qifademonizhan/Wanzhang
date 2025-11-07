@@ -59,7 +59,7 @@
     const db = getFirestore(app);
     const docRef = doc(db, "counter", "counterFile");
 
-    document.getElementById("newSans").addEventListener("click", sansClick);
+    document.getElementById("newSans").addEventListener("click", sansClick );
     async function sansClick() {
      try {
         await updateDoc(docRef, {
