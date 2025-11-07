@@ -69,12 +69,13 @@
         console.error(" 업데이트 중 오류 발생:", error);
     }}
     const count = document.getElementById("count")
-    const ChangeOnTime = onSnapshot( docRef , (doc) => {
+    const changeAlways = onSnapshot( docRef , (doc) => {
       if (doc.exists()) {
         const data = doc.data();
         count.textContent = data.value
   } else {
         alert("해당 문서가 존재하지 않습니다."); });
+    changeAlways();
   </script>
 </body>
 </html>
