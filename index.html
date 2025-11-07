@@ -77,6 +77,51 @@
         count.textContent = data.value
   } else {
         alert("해당 문서가 존재하지 않습니다."); } });
+
+    //샌즈 춤추는 부분
+    const sans = document.getElementById("newSans");
+    let danceCount = 0
+    let b = a;
+    sans.addEventListener("click", () => {
+      if ( sans.id === 'newSans' ) {
+        changePictureInitially();
+  }
+      else {
+        changeAfterClick();
+  }
+});
+
+    function changePictureInitially() {
+      danceCount = 1
+      sans.id = 'dancing'
+      sans.src =  `./dancingSans${danceCount}.jpg`
+      const a = setTimeout(() => { 
+      sans.id = 'newSans'
+      danceCount = 0 },500 ); 
+      return a
+}
+    function changeAfterClick() {
+      clearTimeout(b)
+      switch (sans.src) {
+        case "./dancingSans45.jpg":
+        sans.src = `./dancingSans1.jpg`
+        danceCount = 1
+        const a = setTimeout(() => { 
+          sans.id = 'newSans'
+          danceCount = 0 }, 500)
+        return a
+        break
+      default :
+          danceCount = danceCount + 1
+          sans.src = `./dancingSans${danceCount}.jpg`
+          const a = setTimeout(() => { 
+          sans.id = 'newSans'
+          danceCount = 0 }, 500)
+          return a
+          break
+    
+}
+  
   </script>
 </body>
 </html>
