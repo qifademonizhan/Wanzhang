@@ -35,7 +35,7 @@
   <p>현재 값: <span id="count">0</span></p>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
-    import { getAnalytics, isSupported as analyticsIsSupported } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+    //import { getAnalytics, isSupported as analyticsIsSupported } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
     import { 
       getFirestore,
       doc,
@@ -55,7 +55,7 @@
       measurementId: "G-2GM7QEVNTL"
 };
     const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+    //const analytics = getAnalytics(app);
     const db = getFirestore(app);
     const docRef = doc(db, "counter", "counterFile");
 
