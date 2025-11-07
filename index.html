@@ -45,19 +45,21 @@
       increment,
       getDoc,
   } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-    firebaseConfig = {
+    const firebaseConfig = {
       apiKey: "AIzaSyCEvE_lccy97Ppjgrv-GumHiNXfUJ3SiZc",
       authDomain: "qifa-23727.firebaseapp.com",
       projectId: "qifa-23727",
       storageBucket: "qifa-23727.firebasestorage.app",
       messagingSenderId: "328358384863",
-      appId: "1:328358384863:web:a9235a2fd622a37622c56a",
-      measurementId: "G-T0EM0VE1RF"
+      appId: "1:328358384863:web:82c22bf7a387f85022c56a",
+      measurementId: "G-2GM7QEVNTL"
 };
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
     const db = getFirestore(app);
     const docRef = doc(db, "counter", "counterFile");
+
+    export { db };
 
     document.getElementById("newSans").addEventListener("click", sansClick );
     async function sansClick() {
