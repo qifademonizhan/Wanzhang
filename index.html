@@ -96,15 +96,18 @@ function changePictureInitially() {
   sans.id = 'dancing';
   sans.src = `./dancingSans${danceCount}.gif`;
 
+
   timeoutId = setTimeout(() => {
     sans.id = 'newSans';
-  }, 250);
+    sans.src = './sans.png';   
+    danceCount = 0;
+  }, 600); 
 }
 
 function changeAfterClick() {
   clearTimeout(timeoutId);
 
-  if (sans.src.endsWith("dancingSans45.gif")) {
+  if (sans.src.endsWith("dancingSans24.gif")) {
     danceCount = 1;
   } else {
     danceCount++;
@@ -114,7 +117,9 @@ function changeAfterClick() {
 
   timeoutId = setTimeout(() => {
     sans.id = 'newSans';
-  }, 250);
+    sans.src = './sans.png';  
+    danceCount = 0;
+  }, 600); 
 }
   
   </script>
