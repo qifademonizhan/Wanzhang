@@ -45,7 +45,7 @@
       increment,
       getDoc,
   } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-    const firebaseConfig = {
+    firebaseConfig = {
       apiKey: "AIzaSyCEvE_lccy97Ppjgrv-GumHiNXfUJ3SiZc",
       authDomain: "qifa-23727.firebaseapp.com",
       projectId: "qifa-23727",
@@ -66,7 +66,7 @@
           value: increment(1)
         })
       } catch (error) {
-        console.error(" 업데이트 중 오류 발생:", error);
+        alert(" 업데이트 중 오류 발생:" error );
     }}
     const count = document.getElementById("count")
     const changeAlways = onSnapshot( docRef , (doc) => {
