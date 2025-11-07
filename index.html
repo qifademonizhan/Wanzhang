@@ -94,7 +94,7 @@
     function changePictureInitially() {
       danceCount = 1
       sans.id = 'dancing'
-      sans.src =  `./dancingSans${danceCount}.jpg`
+      sans.src =  `./dancingSans${danceCount}.gif`
       const a = setTimeout(() => { 
       sans.id = 'newSans'
       danceCount = 0 },500 ); 
@@ -103,8 +103,8 @@
     function changeAfterClick() {
       clearTimeout(b)
       switch (sans.src) {
-        case "./dancingSans45.jpg":
-        sans.src = `./dancingSans1.jpg`
+        case "./dancingSans45.gif":
+        sans.src = `./dancingSans1.gif`
         danceCount = 1
         const a = setTimeout(() => { 
           sans.id = 'newSans'
@@ -113,7 +113,7 @@
         break
       default :
           danceCount = danceCount + 1
-          sans.src = `./dancingSans${danceCount}.jpg`
+          sans.src = `./dancingSans${danceCount}.gif`
           const a = setTimeout(() => { 
           sans.id = 'newSans'
           danceCount = 0 }, 500)
