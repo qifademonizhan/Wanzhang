@@ -80,46 +80,41 @@
 
     //샌즈 춤추는 부분
     const sans = document.getElementById("newSans");
-    let danceCount = 0
-    let b = a;
-    sans.addEventListener("click", () => {
-      if ( sans.id === 'newSans' ) {
-        changePictureInitially();
-  }
-      else {
-        changeAfterClick();
+let danceCount = 0;
+let timeoutId = null;
+
+sans.addEventListener("click", () => {
+  if (sans.id === 'newSans') {
+    changePictureInitially();
+  } else {
+    changeAfterClick();
   }
 });
 
-    function changePictureInitially() {
-      danceCount = 1
-      sans.id = 'dancing'
-      sans.src =  `./dancingSans${danceCount}.gif`
-      const a = setTimeout(() => { 
-      sans.id = 'newSans'
-      danceCount = 0 },500 ); 
-      return a
+function changePictureInitially() {
+  danceCount = 1;
+  sans.id = 'dancing';
+  sans.src = `./dancingSans${danceCount}.gif`;
+
+  timeoutId = setTimeout(() => {
+    sans.id = 'newSans';
+  }, 250);
 }
-    function changeAfterClick() {
-      clearTimeout(b)
-      switch (sans.src) {
-        case "./dancingSans45.gif":
-        sans.src = `./dancingSans1.gif`
-        danceCount = 1
-        const a = setTimeout(() => { 
-          sans.id = 'newSans'
-          danceCount = 0 }, 500)
-        return a
-        break
-      default :
-          danceCount = danceCount + 1
-          sans.src = `./dancingSans${danceCount}.gif`
-          const a = setTimeout(() => { 
-          sans.id = 'newSans'
-          danceCount = 0 }, 500)
-          return a
-          break
-    
+
+function changeAfterClick() {
+  clearTimeout(timeoutId);
+
+  if (sans.src.endsWith("dancingSans45.gif")) {
+    danceCount = 1;
+  } else {
+    danceCount++;
+  }
+
+  sans.src = `./dancingSans${danceCount}.gif`;
+
+  timeoutId = setTimeout(() => {
+    sans.id = 'newSans';
+  }, 250);
 }
   
   </script>
