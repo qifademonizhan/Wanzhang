@@ -89,24 +89,18 @@ sans.addEventListener("click", () => {
   } else {
     changeAfterClick();
   }
+
+  
+  resetReturnTimer();
 });
 
 function changePictureInitially() {
   danceCount = 1;
   sans.id = 'dancing';
   sans.src = `./dancingSans${danceCount}.gif`;
-
-
-  timeoutId = setTimeout(() => {
-    sans.id = 'newSans';
-    sans.src = './sans.png';   
-    danceCount = 0;
-  }, 600); 
 }
 
 function changeAfterClick() {
-  clearTimeout(timeoutId);
-
   if (sans.src.endsWith("dancingSans24.gif")) {
     danceCount = 1;
   } else {
@@ -114,12 +108,16 @@ function changeAfterClick() {
   }
 
   sans.src = `./dancingSans${danceCount}.gif`;
+}
 
+//복귀
+function resetReturnTimer() {
+  clearTimeout(timeoutId);
   timeoutId = setTimeout(() => {
     sans.id = 'newSans';
-    sans.src = './sans.png';  
+    sans.src = './sans.png';
     danceCount = 0;
-  }, 600); 
+  }, 500); 
 }
   
   </script>
