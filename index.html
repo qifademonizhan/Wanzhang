@@ -34,38 +34,29 @@
   <img src="./sans.png" id="newSans" alt="sans" />
   <p>현재 값: <span id="count">0</span></p>
   <script type="module">
-    // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAnalytics, isSupported as analyticsIsSupported } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-import {
-    getFirestore,
-    doc,
-    onSnapshot,
-    updateDoc,
-    setDoc,
-    increment,
-    getDoc,
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics, isSupported as analyticsIsSupported } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+    import { 
+      getFirestore,
+      doc,
+      onSnapshot,
+      updateDoc,
+      setDoc,
+      increment,
+      getDoc,
   } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCEvE_lccy97Ppjgrv-GumHiNXfUJ3SiZc",
-  authDomain: "qifa-23727.firebaseapp.com",
-  projectId: "qifa-23727",
-  storageBucket: "qifa-23727.firebasestorage.app",
-  messagingSenderId: "328358384863",
-  appId: "1:328358384863:web:82c22bf7a387f85022c56a",
-  measurementId: "G-2GM7QEVNTL"
+    const firebaseConfig = {
+      apiKey: "AIzaSyCEvE_lccy97Ppjgrv-GumHiNXfUJ3SiZc",
+      authDomain: "qifa-23727.firebaseapp.com",
+      projectId: "qifa-23727",
+      storageBucket: "qifa-23727.firebasestorage.app",
+      messagingSenderId: "328358384863",
+      appId: "1:328358384863:web:a9235a2fd622a37622c56a",
+      measurementId: "G-T0EM0VE1RF"
 };
-    
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const db = getFirestore(app);
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
     const docRef = doc(db, "counter", "counterFile");
 
     document.getElementById("newSans").addEventListener("click", sansClick);
