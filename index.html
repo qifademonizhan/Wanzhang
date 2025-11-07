@@ -68,7 +68,7 @@
           value: increment(1)
         })
       } catch (error) {
-        alert(" 업데이트 중 오류 발생:" error );
+        alert(" 업데이트 중 오류 발생:" + error );
     }}
     const count = document.getElementById("count")
     const changeAlways = onSnapshot( docRef , (doc) => {
@@ -77,7 +77,6 @@
         count.textContent = data.value
   } else {
         alert("해당 문서가 존재하지 않습니다."); });
-    changeAlways();
   </script>
 </body>
 </html>
