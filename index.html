@@ -34,8 +34,8 @@
   <img src="./sans.png" id="newSans" alt="sans" />
   <p>현재 값: <span id="count">0</span></p>
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-    import { getAnalytics, isSupported as analyticsIsSupported } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+    import { getAnalytics, isSupported as analyticsIsSupported } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
     import { 
       getFirestore,
       doc,
@@ -44,7 +44,7 @@
       setDoc,
       increment,
       getDoc,
-  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+  } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
     const firebaseConfig = {
       apiKey: "AIzaSyCEvE_lccy97Ppjgrv-GumHiNXfUJ3SiZc",
       authDomain: "qifa-23727.firebaseapp.com",
