@@ -65,7 +65,7 @@
     async function sansClick() {
      try {
         await updateDoc(docRef, {
-          value: increment(1)
+          "value" : increment(1)
         })
       } catch (error) {
         alert(" 업데이트 중 오류 발생:" + error );
